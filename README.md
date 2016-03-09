@@ -53,7 +53,7 @@ sudo qemu-system-x86_64 /
 The unikernel is running but haven't configured network, yet.
 ```sh
 Warning: vlan 0 is not connected to host network
-|      ___|
+            |      ___|
   __|  _ \  |  _ \ __ \
 \__ \ (   | | (   |  ) |
 ____/\___/ _|\___/____/
