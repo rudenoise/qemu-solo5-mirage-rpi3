@@ -119,3 +119,7 @@ Manager: Interface to 10.0.0.2 nm 255.255.255.0 gw [10.0.0.1]
 ARP: sending gratuitous from 10.0.0.2
 Manager: configuration done
 ```
+
+TO TRY:
+
+* [Setting up Tun/Tap networking for a Qemu Image](http://blog.hvishwanath.net/2013/10/setting-up-tuntap-networking-for-qemu.html)
