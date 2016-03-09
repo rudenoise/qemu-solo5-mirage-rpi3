@@ -21,8 +21,8 @@ Inside the Pi, get up-to-date and install _qemu_ tools.
 ```sh
 sudo apt-get update
 sudo apt-get upgrade
-# install
-sudo apt-get -y install qemu-kvm qemu-system qemu-utils qemu-block-extra qemu-user git
+# install tools
+sudo apt-get -y install qemu-kvm qemu-system qemu-utils qemu-block-extra qemu-user git vim bridge-utils
 ```
 
 Outside the Pi, copy the built _iso_ and _img_ from the container:
@@ -44,8 +44,8 @@ sudo qemu-system-x86_64 /
     -name mirage /
     -m 256 /
     -cdrom kernel.iso /
-    -net nic,model=virtio,macaddr=54:54:00:55:55:55 /
-    -drive file=disk.img,if=virtio -boot d
+    -net nic,model=virtio /
+    -drive file=disk.img,format=raw,if=virtio -boot d
 ```
 
 ## Results
