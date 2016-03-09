@@ -22,7 +22,26 @@ Inside the Pi, get up-to-date and install _qemu_ tools.
 sudo apt-get update
 sudo apt-get upgrade
 # install tools
-sudo apt-get -y install qemu-kvm qemu-system qemu-utils qemu-block-extra qemu-user git vim bridge-utils
+sudo apt-get -y install qemu-kvm qemu-system qemu-utils qemu-block-extra qemu-user git vim bridge-utils uml-utilities
+```
+
+Edit network interfaces and add a bridge interface:
+```
+auto br0
+iface br0 inet static
+    address {{your static network ip}}
+    broadcast 192.168.1.255
+    netmask 255.255.255.0
+    gateway 192.168.1.254
+    bridge_ports {{the name of your ethernet port eth0 or mac}}
+    bridge_fd 9
+    bridge_hello 2
+    bridge_maxage 12
+    bridge_stp off
+```
+
+```sh
+sudo /etc/init.d/networking restart
 ```
 
 Outside the Pi, copy the built _iso_ and _img_ from the container:
