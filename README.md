@@ -50,13 +50,10 @@ sudo qemu-system-x86_64 /
 
 ## Results
 
-The unikernel is running, now need to get the network settings to work.
+The unikernel is running but haven't configured network, yet.
 ```sh
-WARNING: Image format was not specified for 'disk.img' and probing guessed raw.
-         Automatically detecting the format is dangerous for raw images, write operations on block 0 will be restricted.
-Specify the 'raw' format explicitly to remove the restrictions.
 Warning: vlan 0 is not connected to host network
-            |      ___|
+|      ___|
   __|  _ \  |  _ \ __ \
 \__ \ (   | | (   |  ) |
 ____/\___/ _|\___/____/
