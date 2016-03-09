@@ -23,6 +23,10 @@ sudo apt-get update
 sudo apt-get upgrade
 # install tools
 sudo apt-get -y install qemu-kvm qemu-system qemu-utils qemu-block-extra qemu-user git vim bridge-utils uml-utilities
+mkdir code
+cd code
+git checkout https://github.com/rudenoise/qemu-solo5-mirage-rpi3.git
+cd qemu-solo5-mirage-rpi3
 ```
 
 Edit network interfaces and add a bridge interface:
@@ -52,12 +56,13 @@ docker cp solo5-mirage:/home/solo5/solo5/disk.img ./
 
 Copy the _iso_ and _img_ to the RPi.
 ```sh
-scp ./disk.img {{user}}@{{rPi ip address}}:~/
-scp ./kernel.iso {{user}}@{{rPi ip address}}:~/
+scp ./disk.img {{user}}@{{rPi ip address}}:~/code/qemu-solo5-mirage-rpi3
+scp ./kernel.iso {{user}}@{{rPi ip address}}:~/code/qemu-solo5-mirage-rpi3
 ```
 
 Inside the Pi, run the unikernel and disk in _qemu_
 ```sh
+cd code/qemu-solo5-mirage-rpi3
 sudo qemu-system-x86_64 /
     -s -nographic /
     -name mirage /
