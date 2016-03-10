@@ -32,13 +32,9 @@ cd qemu-solo5-mirage-rpi3
 Edit network interfaces and add a bridge interface:
 ```
 auto br0
-iface br0 inet static
-    address {{your static network ip}}
-    broadcast 192.168.1.255
-    netmask 255.255.255.0
-    gateway 192.168.1.254
-    bridge_ports {{the name of your ethernet port eth0 or mac}}
-    bridge_fd 9
+iface br0 inet dhcp
+    bridge_ports enxb827eb7cbbb0
+        bridge_fd 9
     bridge_hello 2
     bridge_maxage 12
     bridge_stp off
