@@ -70,6 +70,11 @@ sudo qemu-system-x86_64 \
     -boot d
 ```
 
+Open another console on the Pi: 
+```sh
+sudo ifconfig tap0 10.0.0.1 alias
+```
+
 ## Results
 
 The unikernel is running but haven't configured network, yet.
