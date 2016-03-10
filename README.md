@@ -63,7 +63,7 @@ sudo qemu-system-x86_64 \
     -s -nographic \
     -name mirage \
     -m 256 \
-    -cdrom kernel.iso /
+    -cdrom kernel.iso \
     -net nic,model=virtio \
     -net tap,ifname=tap0,script=./tap-up.sh,downscript=tap-down.sh \
     -drive file=disk.img,format=raw,if=virtio \
