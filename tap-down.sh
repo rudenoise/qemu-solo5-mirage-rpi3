@@ -1,3 +1,3 @@
 #!/bin/sh
 
-/usr/sbin/tunctl -d $1
+/usr/bin/sudo ip link set dev $1 down
