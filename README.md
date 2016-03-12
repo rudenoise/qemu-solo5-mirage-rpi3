@@ -29,16 +29,6 @@ git checkout https://github.com/rudenoise/qemu-solo5-mirage-rpi3.git
 cd qemu-solo5-mirage-rpi3
 ```
 
-Edit network interfaces and add a bridge interface:
-```
-auto enxb827eb7cbbb0
-iface enxb827eb7cbbb0 inet dhcp
-```
-
-```sh
-sudo /etc/init.d/networking restart
-```
-
 Outside the Pi, copy the built _iso_ and _img_ from the container:
 ```sh
 docker cp solo5-mirage:/home/solo5/solo5/kernel.iso ./
