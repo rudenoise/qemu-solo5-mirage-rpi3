@@ -61,7 +61,20 @@ sudo arp -s 10.0.0.2 52:54:00:12:34:56
 arp -an
 # try this now and then, eventually it might work!!!
 ping 10.0.0.2
+```
 
+## Expose the running unikernel to the outside world
+
+Once the line
+```
+Listening on http://localhost/
+```
+appears, you can use port forwarding to expose it to the host's network.
+
+```sh
+sudo sysctl net.ipv4.ip_forward=1
+sudo iptables -t nat -A PREROUTING -p tcp -d {{ your nw ip }} --dport 8080 -j DNAT --to-destination 10.0.0.2:80
+sudo iptables -t nat -A POSTROUTING -j MASQUERADE
 ```
 
 ## Results
