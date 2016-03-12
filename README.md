@@ -31,13 +31,8 @@ cd qemu-solo5-mirage-rpi3
 
 Edit network interfaces and add a bridge interface:
 ```
-auto br0
-iface br0 inet dhcp
-    bridge_ports enxb827eb7cbbb0
-        bridge_fd 9
-    bridge_hello 2
-    bridge_maxage 12
-    bridge_stp off
+auto enxb827eb7cbbb0
+iface enxb827eb7cbbb0 inet dhcp
 ```
 
 ```sh
@@ -72,7 +67,11 @@ sudo qemu-system-x86_64 \
 
 Open another console on the Pi: 
 ```sh
-sudo ifconfig tap0 10.0.0.1 alias
+sudo arp -s 10.0.0.2 52:54:00:12:34:56
+arp -an
+# try this now and then, eventually it might work!!!
+ping 10.0.0.2
+
 ```
 
 ## Results
