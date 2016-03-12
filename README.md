@@ -57,8 +57,6 @@ sudo qemu-system-x86_64 \
 
 Open another console on the Pi: 
 ```sh
-sudo arp -s 10.0.0.2 52:54:00:12:34:56
-arp -an
 # try this now and then, eventually it might work!!!
 ping 10.0.0.2
 ```
@@ -125,4 +123,4 @@ Manager: configuration done
 Listening on http://localhost/
 ```
 
-Wait some random period, look away, and it'll be running.
+Wait some random period, look away, ping it again... and it'll be running.
