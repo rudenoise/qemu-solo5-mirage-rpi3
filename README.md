@@ -112,36 +112,4 @@ Manager: configuration done
 Listening on http://localhost/
 ```
 
-```
-# arp
-Address                  HWtype  HWaddress           Flags Mask            Iface
-192.168.1.1              ether   48:ee:0c:6c:f8:34   C                     br0
-10.0.0.2                 ether   52:54:00:12:34:56   CM                    tap0
-192.168.1.7              ether   a0:99:9b:02:ea:d5   C                     br0
-```
-
-```
-# ifconfig br0
-br0       Link encap:Ethernet  HWaddr 16:69:d8:29:01:d5
-          inet addr:192.168.1.10  Bcast:192.168.1.255  Mask:255.255.255.0
-          inet6 addr: fe80::ba27:ebff:fe7c:bbb0/64 Scope:Link
-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:7905 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:3510 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:0
-          RX bytes:1117097 (1.1 MB)  TX bytes:440074 (440.0 KB)
-```
-
-```
-# ifconfig tap0
-tap0      Link encap:Ethernet  HWaddr 16:69:d8:29:01:d5
-          inet addr:10.0.0.1  Bcast:10.255.255.255  Mask:255.0.0.0
-          inet6 addr: fe80::1469:d8ff:fe29:1d5/64 Scope:Link
-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:1 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:179 errors:0 dropped:1961 overruns:0 carrier:0
-          collisions:0 txqueuelen:500
-          RX bytes:42 (42.0 B)  TX bytes:36537 (36.5 KB)
-```
-
-Can't ping 10.0.0.2
+Wait some random period, look away, and it'll be running.
